@@ -10,10 +10,13 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("Food Card")
+            
+            ScrollView{
+                ForEach(Food.foodData) {
+                    food in FoodCard(food: food)
+                }
+            }
         }
         .padding()
     }
